@@ -44,4 +44,4 @@ LoadingDots.propTypes ={
 
 
 
-export default (LoadingDots);
+export {LoadingDots};

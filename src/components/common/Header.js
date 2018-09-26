@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
-import LoadingDots from './LoadingDots';
+import {LoadingDots} from './index';
 // activeClassName feature comes with Link and IndexLink
 // activeClassName when this link is active go ahead an apply this class for me
 const Header = ({loading}) => {
@@ -21,4 +21,4 @@ Header.propTypes = {
     loading: PropTypes.bool.isRequired
 };
 
-export default Header;
+export {Header};
