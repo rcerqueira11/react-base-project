@@ -13,6 +13,6 @@ const routes = (
       <Route component={NotFoundPage} />
     </Switch>
   </div>
-)
+);
 
 export default routes
