@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import routes from "../routes"
 import { hot } from "react-hot-loader";
+import Navbar from "./NavBar";
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -19,13 +20,7 @@ class App extends React.Component {
     const activeStyle = { color: 'blue' };
     return (
       <div>
-        <div>
-          <NavLink exact to="/" activeStyle={activeStyle}>Home</NavLink>
-          {' | '}
-          <NavLink to="/" activeStyle={activeStyle}>Demo App</NavLink>
-          {' | '}
-          <NavLink to="/" activeStyle={activeStyle}>About</NavLink>
-        </div>
+        <Navbar />
         { routes }
       </div>
     );
