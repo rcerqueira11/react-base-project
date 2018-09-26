@@ -1,1 +1,1 @@
-From [react-slingshot](https://github.com/coryhouse/react-slingshot.git
+From [react-slingshot](https://github.com/coryhouse/react-slingshot.git)
