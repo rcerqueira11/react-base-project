@@ -7,6 +7,7 @@ import HomePage from "./home/HomePage";
 import NotFoundPage from "./errorPage/NotFoundPage";
 import PropTypes from "prop-types";
 import React from "react";
+import routes from "../routes"
 import { hot } from "react-hot-loader";
 
 // This is a class-based component because the current
@@ -25,10 +26,7 @@ class App extends React.Component {
           {' | '}
           <NavLink to="/" activeStyle={activeStyle}>About</NavLink>
         </div>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-
-        </Switch>
+        { routes }
       </div>
     );
   }
