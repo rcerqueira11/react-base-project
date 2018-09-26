@@ -3,8 +3,8 @@ import { NavLink, Route, Switch } from "react-router-dom";
 
 // import AboutPage from "./AboutPage";
 // import FuelSavingsPage from "./containers/FuelSavingsPage";
-import HomePage from "./HomePage";
-// import NotFoundPage from "./NotFoundPage";
+import HomePage from "./home/HomePage";
+import NotFoundPage from "./errorPage/NotFoundPage";
 import PropTypes from "prop-types";
 import React from "react";
 import { hot } from "react-hot-loader";
