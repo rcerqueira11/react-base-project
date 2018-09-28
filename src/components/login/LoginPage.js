@@ -6,11 +6,16 @@ import { connect } from 'react-redux'
 import LoginForm from './LoginForm'
 
 export class LoginPage extends Component {
-  static propTypes = {
-    email: PropTypes.email,
-    password: PropTypes.password,
+  constructor(props,context){
+    super(props, context);
 
+    this.state ={
+        errors: {},
+        saving: false
+    };
 
+    this.updateCourseState = this.updateAuthState.bind(this);
+    this.loginUser = this.loginUser.bind(this);
   }
 
   updateAuthState(event){
@@ -20,13 +25,13 @@ export class LoginPage extends Component {
     return this.setState({auth: auth});
   }
 
-  saveAuth(event){
+  loginUser(event){
       event.preventDefault();
       if (!this.authFormValid()){
           return;
       }
       this.setState({saving: true});
-      this.props.actions.saveauth(this.state.auth)
+      this.props.actions.loginUser(this.state.auth)
       .then(() => this.redirect())
       .catch(error => {
           toastr.error(error);
@@ -36,7 +41,7 @@ export class LoginPage extends Component {
 
   redirect(){
       this.setState({saving: false});
-      toastr.success('auth saved');
+      toastr.success('logged in');
       this.context.router.push('/dasboard');
   }
 
@@ -44,7 +49,7 @@ export class LoginPage extends Component {
     return (
       <LoginForm
         onChange={this.updateAuthState}
-        onSave={this.saveAuth}
+        onSave={this.loginUser}
         errors={this.state.errors}
         saving={this.state.saving}
       />
@@ -53,7 +58,7 @@ export class LoginPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-
+  return {}
 }
 
 const mapDispatchToProps = (dispatch) => {

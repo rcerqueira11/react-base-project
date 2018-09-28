@@ -9,7 +9,9 @@ import PropTypes from "prop-types";
 import React from "react";
 import routes from "../routes"
 import { hot } from "react-hot-loader";
-import {Header} from "../components/common";
+import { Header } from "../components/common";
+import { connect } from 'react-redux'
+
 
 // This is a class-based component because the current
 // version of hot reloading won't hot reload a stateless
@@ -34,5 +36,11 @@ App.propTypes = {
   loading: PropTypes.bool.isRequired
 };
 
+function mapStateToProps(state, ownProps){
+  return {
+      loading: state.ajaxCallsInProgress > 0
+  };
+}
 
-export default hot(module)(App);
+
+export default  hot(module)(connect(mapStateToProps)(App));

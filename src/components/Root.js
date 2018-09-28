@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ConnectedRouter } from 'connected-react-router';
 import { Provider } from 'react-redux';
 import App from './App';
+import ErrorBoundary from './ErrorBoundary';
 
 export default class Root extends Component {
   render() {
@@ -10,7 +11,9 @@ export default class Root extends Component {
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
         </ConnectedRouter>
       </Provider>
     );
