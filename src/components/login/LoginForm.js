@@ -10,15 +10,17 @@ const EmailForm = ({onSave, onChange, saving, errors}) => {
             <TextInput
                 name="email"
                 label="Email"
+
                 // value={course.title}
                 onChange={onChange}
                 error={errors.title}/>
 
 
             <TextInput
-                name="category"
-                label="Category"
-                // value={course.category}
+                name="password"
+                label="Password"
+                secureTextEntry={true}
+                placeholder="password"
                 onChange={onChange}
                 error={errors.category} />
 
